@@ -1,12 +1,8 @@
 export { default as MonacoEditor } from './MonacoEditor.vue';
-
-export type IframeCssUpdatedMessage = {
-  type: 'stylebotMonacoIframeCssUpdated';
-  css: string;
-};
-
-export type IframeLoadedMessage = {
-  type: 'stylebotMonacoIframeLoaded';
+export * from './monaco-editor.DS_Store';
+ type: 'stylebotMonacoIframeCssUpdated';
+  css: string;export * from './monaco-editor.DS_Store';
+ type: 'stylebotMonacoIframeLoaded';
 };
 
 export type IframeMessage = IframeCssUpdatedMessage | IframeLoadedMessage;

@@ -1,3 +1,4 @@
+*/.DS_Store
 .DS_Store?
 Icon?
 .DS_Store
@@ -10,3 +11,4 @@ node_modules
 yarn-error.log
 coverage
 .history
+# ignore all .DS_Store files in any directory:
