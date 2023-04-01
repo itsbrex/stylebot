@@ -12,3 +12,5 @@ yarn-error.log
 coverage
 .history
 # ignore all .DS_Store files in any directory:
+src/monaco-editor/monaco-editor.DS_Store.ts
+src/monaco-editor/iframe/iframe.DS_Store.ts
