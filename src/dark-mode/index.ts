@@ -19,6 +19,7 @@ const Theme = {
   selectionColor: tinycolor('#fff'),
   selectionBackgroundColor: tinycolor('#68C2D0'),
 };
+// list all hex colors from above as just the hex value: #e8e6e3, #222, #736b5e, #b2aba1, #A9BAC5, #fff, #68C2D0
 
 const getDarkModeBackgroundColor = (
   color: tinycolor.Instance

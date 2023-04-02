@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import CustomLight from './themes/CustomLight';
+// import CustomLight from './themes/CustomLight';
 import { IframeMessage, ParentUpdateCssMessage } from '@stylebot/monaco-editor';
+import CustomDark from './themes/CustomDark'; // TODO: add dark theme
 
 declare global {
   interface Window {
@@ -35,7 +36,9 @@ class MonacEditorIframe {
   }
 
   defineThemes(): void {
-    window.monaco.editor.defineTheme('custom-light', CustomLight);
+    // window.monaco.editor.defineTheme('custom-light', CustomLight);
+    window.monaco.editor.defineTheme('custom-dark', CustomDark);
+
   }
 
   initEditor(): void {
@@ -65,7 +68,7 @@ class MonacEditorIframe {
     return {
       value: '',
       tabSize: 2,
-      theme: 'custom-light',
+      theme: 'custom-dark',
       wordWrap: 'bounded',
       wordWrapColumn,
       scrollBeyondLastLine: false,
