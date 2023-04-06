@@ -9,7 +9,7 @@
         />
       </b-col>
 
-      <b-col cols="8" class="mt-2">
+      <b-col cols="8" class="">
         <component :is="currentTabComponent" />
       </b-col>
     </b-row>
@@ -20,9 +20,9 @@
 import Vue from 'vue';
 
 import TheBasicsTab from './components/TheBasicsTab.vue';
+import TheNavigation from './components/TheNavigation.vue';
 import TheStylesTab from './components/TheStylesTab.vue';
 import TheSyncTab from './components/TheSyncTab.vue';
-import TheNavigation from './components/TheNavigation.vue';
 
 export default Vue.extend({
   name: 'App',
@@ -63,8 +63,18 @@ export default Vue.extend({
 @import '~bootstrap';
 @import '~bootstrap-vue';
 
+.container {
+  height: calc(100% - 50px);
+  // display: flex; 
+  // justify-content: center;
+  // align-items: center;
+}
+
 .main {
   height: calc(100% - 50px);
+  // display: flex; 
+  // justify-content: center;
+  // align-items: center;
 }
 
 .container {

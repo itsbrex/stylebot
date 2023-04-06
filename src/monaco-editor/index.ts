@@ -1,7 +1,7 @@
 export { default as MonacoEditor } from './MonacoEditor.vue';
-export * from './monaco-editor.DS_Store';
+
  type: 'stylebotMonacoIframeCssUpdated';
-  css: string;export * from './monaco-editor.DS_Store';
+  css: string;
  type: 'stylebotMonacoIframeLoaded';
 };
 

@@ -1,15 +1,57 @@
 /* Include typography overrides here */
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Ubuntu, 'Helvetica Neue', sans-serif;
-  font-weight: 400;
+  // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  //   Ubuntu, 'Helvetica Neue', sans-serif !important;
+  font-family: OperatorMono-Light,monaco,Consolas,"Lucida Console",monospace !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
 }
 
 h1 {
-  font-size: 14px;
+  font-family: OperatorMono-Light,monaco,Consolas,"Lucida Console",monospace !important;
+  font-size: 29px !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: 400 !important;
+  line-height: 29px
 }
+h3 {
+  font-family: OperatorMono-Light,monaco,Consolas,"Lucida Console",monospace !important;
+  font-size: 22px !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: 400 !important;
+  line-height: 29px
+}
+p {
+  font-family: OperatorMono-Light,monaco,Consolas,"Lucida Console",monospace !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: 400 !important;
+  line-height: 29px
+}
+blockquote {
+  font-family: OperatorMono-Light,monaco,Consolas,"Lucida Console",monospace !important;
+  font-size: 22px !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: 700 !important;
+  line-height: 29px
+}
+pre {
+  font-family: OperatorMono-Light,monaco,Consolas,"Lucida Console",monospace !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: 400 !important;
+  line-height: 29px
+}
+// h1 {
+//   font-size: 14px !important;
+// }
 
 .lead {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 12px !important;
+  line-height: 18px !important;
 }

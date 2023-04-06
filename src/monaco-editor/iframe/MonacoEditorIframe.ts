@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// import CustomLight from './themes/CustomLight';
 import { IframeMessage, ParentUpdateCssMessage } from '@stylebot/monaco-editor';
 import CustomDark from './themes/CustomDark'; // TODO: add dark theme
+// import CustomLight from './themes/CustomLight';
 
 declare global {
   interface Window {

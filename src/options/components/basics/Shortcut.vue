@@ -45,8 +45,9 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .shortcut {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, monospace;
+  // font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+  //   Courier New, monospace;
+  font-family: OperatorMono-Light, Menlo, Monaco, 'Courier New', monospace;
   font-size: 14px;
 }
 </style>
