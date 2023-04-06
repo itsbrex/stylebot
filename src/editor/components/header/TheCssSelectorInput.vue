@@ -12,9 +12,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import { validateSelector } from '@stylebot/css';
 import { Highlighter } from '@stylebot/highlighter';
+import Vue from 'vue';
 
 export default Vue.extend({
   name: 'TheCssSelectorInput',
@@ -84,6 +84,8 @@ export default Vue.extend({
 <style lang="scss">
 .css-selector-input {
   padding: 4px !important;
+  background: transparent !important;
+  color: #f2f2f2 !important;
 
   &:focus {
     box-shadow: none !important;

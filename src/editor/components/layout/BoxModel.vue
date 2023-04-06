@@ -88,9 +88,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { debounce } from 'lodash';
 import { Highlighter } from '@stylebot/highlighter';
+import { debounce } from 'lodash';
+import Vue from 'vue';
 
 import Box from './Box.vue';
 import BoxModelLength from './BoxModelLength.vue';
@@ -187,7 +187,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .box-margin {
   background: #fff;
-  border: 1px solid #eee;
+  // border: 1px solid #eee;
 
   &.highlighted {
     background: rgba(255, 155, 0, 0.3);
@@ -200,10 +200,10 @@ export default Vue.extend({
 
 .box-border {
   background: #fff;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
 
   &.highlighted {
-    border: 1px solid #fff;
+    // border: 1px solid #fff;
     background: rgba(255, 200, 50, 0.3);
 
     &.disabled {
@@ -213,7 +213,7 @@ export default Vue.extend({
 }
 
 .box-padding {
-  border: 1px dashed #aaa;
+  // border: 1px dashed #aaa;
   background: #fff;
 
   &.highlighted {
