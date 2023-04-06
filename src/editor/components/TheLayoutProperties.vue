@@ -1,7 +1,7 @@
 <template>
   <div>
     <visibility />
-    <box-model class="mt-3" />
+    <box-model class="" />
   </div>
 </template>
 

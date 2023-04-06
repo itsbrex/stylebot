@@ -24,7 +24,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { StylebotLayout, StylebotEditingMode } from '@stylebot/types';
+import { StylebotEditingMode, StylebotLayout } from '@stylebot/types';
 
 export default Vue.extend({
   name: 'TheStylebotResizer',
@@ -146,7 +146,7 @@ export default Vue.extend({
 .stylebot {
   &.vdr {
     position: fixed;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
 
     &.stylebot-resizing,
     &.stylebot-resizing-active {

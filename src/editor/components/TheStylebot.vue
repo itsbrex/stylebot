@@ -18,10 +18,10 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import TheHeader from './TheHeader.vue';
-import TheFooter from './TheFooter.vue';
-import TheCodeEditor from './TheCodeEditor.vue';
 import TheBasicEditor from './TheBasicEditor.vue';
+import TheCodeEditor from './TheCodeEditor.vue';
+import TheFooter from './TheFooter.vue';
+import TheHeader from './TheHeader.vue';
 import TheMagicEditor from './TheMagicEditor.vue';
 import TheStylebotResizer from './TheStylebotResizer.vue';
 
@@ -59,13 +59,20 @@ export default Vue.extend({
 .stylebot {
   top: 0;
   padding: 0;
-  color: #000;
   line-height: 20px;
-  background: #fff;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  // color: var(--main-foreground) !important; // TODO: fix this
+  // background: var(--main-background) !important;
 }
 
+
 .stylebot-body {
-  overflow: auto;
-  height: calc(100% - 125px);
+  // flex: 1;
+  position: relative;
+  // overflow: hidden;
+  height: 90%;
+  color: var(--main-foreground) !important;
+  background: var(--main-background) !important;
 }
 </style>
