@@ -2,6 +2,10 @@
 @import '../../node_modules/vue-draggable-resizable/dist/VueDraggableResizable.css';
 
 .stylebot-app {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+
   @import 'scss/theme.scss';
 
   @import '~bootstrap';

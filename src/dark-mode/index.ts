@@ -7,8 +7,21 @@ import { getSelector } from '@stylebot/css';
 declare global {
   interface Window {
     stylebotDarkModeUrl: string;
+    isCustomDarkModeEnabled: boolean;
   }
 }
+
+window.isCustomDarkModeEnabled = false;
+
+const CustomDarkTheme = {
+  color: tinycolor('#dcdcdc'),
+  backgroundColor: tinycolor('#333'),
+  borderColor: tinycolor('#555'),
+  placeholder: tinycolor('#b2aba1'),
+  linkColor: tinycolor('#A9BAC5'),
+  selectionColor: tinycolor('#fff'),
+  selectionBackgroundColor: tinycolor('#68C2D0'),
+};
 
 const Theme = {
   color: tinycolor('#e8e6e3'),
@@ -19,7 +32,6 @@ const Theme = {
   selectionColor: tinycolor('#fff'),
   selectionBackgroundColor: tinycolor('#68C2D0'),
 };
-// list all hex colors from above as just the hex value: #e8e6e3, #222, #736b5e, #b2aba1, #A9BAC5, #fff, #68C2D0
 
 const getDarkModeBackgroundColor = (
   color: tinycolor.Instance
@@ -62,22 +74,22 @@ const getDarkModeBorderColor = (
 const getDefaultCss = (): string => {
   return dedent`
     html, body, input, textarea, select, button {
-      color: ${Theme.color.toHexString()};
-      border-color: ${Theme.borderColor.toHexString()};
-      background-color: ${Theme.backgroundColor.toHexString()};
+      color: ${CustomDarkTheme.color.toHexString()};
+      border-color: ${CustomDarkTheme.borderColor.toHexString()};
+      background-color: ${CustomDarkTheme.backgroundColor.toHexString()};
     }
 
     ::placeholder {
-      color: ${Theme.placeholder.toHexString()};
+      color: ${CustomDarkTheme.placeholder.toHexString()};
     }
 
     a {
-      color: ${Theme.linkColor.toHexString()};
+      color: ${CustomDarkTheme.linkColor.toHexString()};
     }
 
     ::selection {
-      color: ${Theme.selectionColor.toHexString()};
-      background: ${Theme.selectionBackgroundColor.toHexString()};
+      color: ${CustomDarkTheme.selectionColor.toHexString()};
+      background: ${CustomDarkTheme.selectionBackgroundColor.toHexString()};
     }
   `;
 };
@@ -170,7 +182,7 @@ const didUrlChange = (): boolean => {
 };
 
 const initDarkMode = () => {
-  const css = getCss();
+  const css = window.isCustomDarkModeEnabled ? getCustomDarkModeCss() : getCss();
   const id = 'stylebot-dark-mode';
   const el = document.getElementById(id);
 
@@ -187,6 +199,39 @@ const initDarkMode = () => {
 
   document.documentElement.appendChild(style);
 };
+
+const getCustomDarkModeCss = (): string => {
+  const root = postcss.parse(getDefaultCss());
+  const all = document.querySelectorAll('body, body *:not(#stylebot)');
+  const evaluatedSelectors: Array<string> = [];
+
+  all.forEach(el => {
+    if (!el.closest('.stylebot')) {
+      const selector = getSelector(el as HTMLElement);
+
+      try {
+        if (evaluatedSelectors.indexOf(selector) === -1) {
+          const css = getElementCss(el as HTMLElement, selector);
+          if (css) {
+            root.append(css);
+          }
+
+          evaluatedSelectors.push(selector);
+        }
+      } catch (e) {
+        console.log(`Error analyzing ${selector}`, e);
+      }
+    }
+  });
+
+  root.walkDecls(decl => (decl.important = true));
+  return root.toString();
+};
+
+document.addEventListener('toggleCustomDarkMode', () => {
+  window.isCustomDarkModeEnabled = !window.isCustomDarkModeEnabled;
+  apply(true);
+});
 
 export const apply = (forceApply = false): void => {
   // Prevent duplicate calls for the same url if not force applying
@@ -207,3 +252,5 @@ export const apply = (forceApply = false): void => {
 export const remove = (): void => {
   document.getElementById('stylebot-dark-mode')?.remove();
 };
+
+document.dispatchEvent(new Event('toggleCustomDarkMode'));
