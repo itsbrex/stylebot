@@ -23,6 +23,9 @@ export default Vue.extend({
   height: 60px;
   position: relative;
   text-align: center;
-  background: #eee;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  // color: var(--main-foreground);
+  // background: var(--main-background);
 }
 </style>

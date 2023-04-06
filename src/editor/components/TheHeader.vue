@@ -18,9 +18,9 @@
 <script lang="ts">
 import Vue from 'vue';
 
+import TheCssSelectorDropdown from './header/TheCssSelectorDropdown.vue';
 import TheInspector from './header/TheInspector.vue';
 import TheWindowActions from './header/TheWindowActions.vue';
-import TheCssSelectorDropdown from './header/TheCssSelectorDropdown.vue';
 
 export default Vue.extend({
   name: 'TheHeader',
@@ -55,13 +55,17 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .header {
-  background: #eee;
+// set the background color to dyanmically use the chosen them as above e.g. custom-dark
+  background-color: #1e1e1e;
+  color: #f1f1f1;
 }
 
 .url {
-  color: #333;
+  color: #f1f1f1;
   font-size: 12px;
-  padding: 0 8px;
+  padding: 0px 0px 0px 8px;
   margin-top: 3px;
+  // overflow: visible;
+  // font: 'OperatorMono-Light-ExtraLight';
 }
 </style>

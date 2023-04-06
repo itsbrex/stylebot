@@ -1,11 +1,11 @@
 <template>
-  <code-editor-iframe id="stylebot-selector-css" class="mt-2" />
+  <code-editor-iframe id="stylebot-selector-css" class="" /> <!-- TODO: check if the mt-2 is causing the layout shift bug-->
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
-import { getRule, addEmptyRule, removeEmptyRules } from '@stylebot/css';
+import { addEmptyRule, getRule, removeEmptyRules } from '@stylebot/css';
 import { IframeMessage, ParentUpdateCssMessage } from '@stylebot/monaco-editor';
 
 import CodeEditorIframe from './code/CodeEditorIframe.vue';

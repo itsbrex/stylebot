@@ -59,13 +59,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import { StylebotBasicModeSections } from '@stylebot/types';
+import Vue from 'vue';
 
-import TheTextProperties from './TheTextProperties.vue';
+import TheBorderProperties from './TheBorderProperties.vue';
 import TheColorProperties from './TheColorProperties.vue';
 import TheLayoutProperties from './TheLayoutProperties.vue';
-import TheBorderProperties from './TheBorderProperties.vue';
+import TheTextProperties from './TheTextProperties.vue';
 
 export default Vue.extend({
   name: 'TheBasicEditor',
@@ -139,7 +139,9 @@ export default Vue.extend({
   background: none !important;
   border-radius: 0 !important;
   border: none !important;
-  color: #333 !important;
+  color: var(--main-foreground) !important;
+  background: var(--main-background);
+  // color: #333 !important;
   padding: 0 !important;
   width: 100% !important;
   font-size: 14px !important;
