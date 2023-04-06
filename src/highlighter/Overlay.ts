@@ -11,10 +11,10 @@
  */
 
 import {
+  Dimensions,
+  Rect,
   getElementDimensions,
   getNestedBoundingClientRect,
-  Rect,
-  Dimensions,
 } from './utils';
 
 type Box = {
@@ -27,9 +27,16 @@ type Box = {
 type LayoutProperty = 'margin' | 'border' | 'padding' | 'height' | 'width';
 
 // https://dev.to/kingdaro/indexing-objects-in-typescript-1cgi
+/**
+ * Checks if an object has a specific key.
+ * @param obj - The object to check for the key.
+ * @param key - The key to check in the object.
+ * @returns True if the key exists in the object, otherwise false.
+ */
 function hasKey<O>(obj: O, key: string | number | symbol): key is keyof O {
   return key in obj;
 }
+
 
 // Note that the Overlay components are not affected by the active Theme,
 // because they highlight elements in the main Chrome window (outside of devtools).
@@ -132,13 +139,15 @@ class OverlayTip {
       flexFlow: 'row nowrap',
       backgroundColor: '#333740',
       borderRadius: '2px',
-      fontFamily:
-        '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
+      // fontFamily:
+      //   '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
+      // font-family: "OperatorMono-Light, Menlo, Monaco, 'Courier New', monospace";
+      fontFamily: 'OperatorMono-Light, Menlo, Monaco, "Courier New", monospace',
       fontWeight: 'bold',
       padding: '3px 5px',
       pointerEvents: 'none',
       position: 'fixed',
-      fontSize: '12px',
+      fontSize: '14px',
       whiteSpace: 'nowrap',
     });
 
