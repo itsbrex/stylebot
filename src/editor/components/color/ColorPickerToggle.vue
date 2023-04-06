@@ -36,5 +36,7 @@ export default Vue.extend({
   border: none;
   float: left;
   background: #eee;
+  // color: var(--main-foreground);
+  // background: var(--main-background);
 }
 </style>

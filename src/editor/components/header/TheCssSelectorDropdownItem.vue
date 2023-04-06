@@ -11,9 +11,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import { validateSelector } from '@stylebot/css';
 import { Highlighter } from '@stylebot/highlighter';
+import Vue from 'vue';
 
 export default Vue.extend({
   name: 'TheCssSelectorDropdownItem',
@@ -64,6 +64,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .css-selector-dropdown-item {
-  font-family: Monaco, monospace;
+  font-family: OperatorMono-Light, Monaco, monospace;
 }
 </style>
