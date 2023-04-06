@@ -144,7 +144,7 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 fieldset {
-  border: 1px solid silver;
+  /* border: 1px solid silver; */
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -541,7 +541,8 @@ li > p {
   margin-bottom: calc(1.45rem / 2);
 }
 code {
-  font-size: 0.85rem;
+  /* font-size: 0.85rem; */
+  font-size: 1.00rem;
   line-height: 1.45rem;
 }
 kbd {
@@ -591,10 +592,11 @@ td:last-child {
 }
 tt,
 code {
-  background-color: hsla(0, 0%, 0%, 0.04);
+  /* background-color: hsla(0, 0%, 0%, 0.04); */
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
+  /* font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
+    "Liberation Mono", Menlo, Courier, monospace; */
+  font-family: "OperatorMono-Light, Menlo, Monaco, 'Courier New', monospace";
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
